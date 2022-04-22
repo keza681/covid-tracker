@@ -43,7 +43,7 @@ Region.propTypes = {
 };
 
 function Regions() {
-  const countries = useSelector((state) => state.countriesReducer);
+  const countries = useSelector((state) => state.covidReducers);
   const { id } = useParams();
   let country = [];
   countries.forEach((element) => {
@@ -61,7 +61,7 @@ function Regions() {
       <div className="detailsBaner">
         <img
           className="map2"
-          src={`https://mapsvg.com/static/maps/geo-calibrated/${name.toLowerCase()}.svg`}
+          src="https://cdn.pixabay.com/photo/2020/04/29/07/54/coronavirus-5107715_960_720.png"
           alt="map"
           /* eslint-disable no-param-reassign */
           onError={(event) => {
@@ -93,7 +93,7 @@ function Regions() {
           </h4>
         </div>
       </div>
-      <div className="searchBar">
+      <div className="search">
         <h2>City/Town breakdown - 2022</h2>
       </div>
       <ul className="regionContainer">

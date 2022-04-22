@@ -25,15 +25,11 @@ export function Country({ name, cases_confirmed }) {
           <div className="mapBox">
             <img
               className="map"
-              src={`https://mapsvg.com/static/maps/geo-calibrated/${name.toLowerCase()}.svg`}
-              alt="map"
-              onError={(event) => {
-                event.target.src = 'https://img.icons8.com/pastel-glyph/120/000000/map.png';
-                event.onerror = null;
-              }}
+              src="https://cdn.pixabay.com/photo/2020/04/29/07/54/coronavirus-5107715_960_720.png"
+              alt="covid img"
             />
           </div>
-          <h4>{name}</h4>
+          <p>{name}</p>
           <h4>{cases_confirmed}</h4>
         </li>
       </NavLink>
@@ -59,22 +55,20 @@ function Countries() {
       <header className="cover">
         <div className="title">
           <div className="logo">
-            <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/120/ffffff/external-world-virus-transmission-wanicon-lineal-wanicon.png" alt="virus-transmission" />
             <div>
-              <h1>2022</h1>
-              <h3>covid-19 world tracker</h3>
+              <h1>Covid Cases</h1>
             </div>
           </div>
         </div>
       </header>
-      <div className="searchBar">
-        <div className="dateSelection">
+      <div className="search">
+        <div className="myDate">
           <h2> Stats by country</h2>
           <h3 className="date">{date}</h3>
         </div>
-        <input type="text" name="search" id="search" placeholder="Search Countries" value={search} onChange={handleSearch} className="search" />
+        <input type="text" name="search" id="search" placeholder="search here" value={search} onChange={handleSearch} className="inputSearch" />
       </div>
-      <ul className="Countriescontainer">
+      <ul className="myCounty">
         {filteredCountries.map(({ id, name, cases_confirmed }) => (
           <Country
             key={id}
